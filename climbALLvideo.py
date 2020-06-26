@@ -123,7 +123,7 @@ if __name__ == '__main__':
             break
         t_bv = get_related_bv(bv, 'xxxxxxx')   # 这里填入要搜寻的频道名称
         if not t_bv:  # 获取失败，重新放入队列下次重试
-            print('均无魔圆')
+            print('均不符合条件')
             continue
         for b in t_bv:
             if not b in bvs:
@@ -133,7 +133,7 @@ if __name__ == '__main__':
                 bvQueue.put(b)
         # 如果你想的话，也可以把时间打印出来
         #n += 1
-        #if n % 500 == 0:
+        #if n % 100 == 0:
         #    print("当前时间： ",time.strftime('%Y.%m.%d %H:%M:%S ',time.localtime(time.time())))
         #    print(n)
         sleep_func()
